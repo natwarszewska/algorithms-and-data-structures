@@ -34,10 +34,14 @@ public class App {
     private static void runStackReverseString(){
 
         System.out.println("TEST: runStackReverseString -----------------------------");
-        SimpleCharStack stack = new SimpleCharStack(15);
-        char[] text = "Hello there!".toCharArray();
-        for(char t : text){
-            stack.push(t);
+        String textToreverse = "Hello there!";
+        int textLength = textToreverse.length();
+
+        SimpleCharStack stack = new SimpleCharStack(textLength);
+
+        for(int i = 0; i < textLength; i++) {
+            char ch = textToreverse.charAt(i);
+            stack.push(ch);
         }
 
         while(!stack.isEmpty()){
